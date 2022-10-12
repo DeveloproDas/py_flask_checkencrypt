@@ -13,17 +13,12 @@
     <img id="headerUSQ" src="../static/img/HeaderUSQ.png" alt="USQ">
 </header>
 <body>
-    <img id="backgroundmain" src="../static/img/backgroundmain.png" alt="">
+    <img id="backgroundmain" src="../static/img/backgroundLogin.png" alt="">
     <!-- <div id="positionF">{{ user }} and {{ password }}</div> -->
-    <div id="bodyForm">
-        <form action="" method="post">
-            <label for="user">User</label>
-            <input type="text" name="user" id="user" placeholder="User Name">
-
-            <label for="pass">Password</label>
-            <input type="password" name="pass" id="pass" placeholder="Password">
-
-            <input type="submit" value="Logon">
+    <div id="bodyForm_loggedin">
+        <p id="userLogon">User "{{ user }}" has log on.</p>
+        <form action="/loggedin" method="post">
+            <input type="submit" value="Log out">
         </form>
     </div>
 </body>
