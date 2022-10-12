@@ -1,0 +1,107 @@
+* {
+    margin: 0px;
+}
+html {
+    background-color:aliceblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/*Start - Header*/
+header{
+    /* background-color: brown; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+}
+#headerUSQ {
+    background-color: black;
+    width: 273px;
+    height: 274px;
+    margin-top: 20px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 20px 10px #1e1e1e;
+}
+/*End - Header*/
+
+/*Start - Body*/
+body {
+    background-color: #FFC700;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+#backgroundmain {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    opacity: 0.3;
+    z-index: -1;
+}
+#bodyForm {
+    position: absolute;
+    top: 35%;
+    margin-left: 15%;
+    font-family: sans-serif;
+    font-style: italic;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-shadow: 5px 5px 10px #1e1e1e;
+}
+#bodyForm > form {
+    display: flex;
+    flex-direction: column;
+}
+#bodyForm > form > input {
+    margin-bottom: 22px;
+    font-size: 0.9em;
+    border-radius: 8px;
+}
+#bodyForm > form > input[type=submit] {
+    color: #FFFFFF;
+    padding: 3px;
+    background-color:#1e1e1e;
+}
+/*End - Body*/
+
+/*Start - Footer*/
+footer {
+    background-color: #181818;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: auto;
+    /* padding: 10px; */
+}
+#footerinfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap:wrap;
+    color: #FFC700;
+    width: 100%;
+    height: 100%;
+    margin: 15px 0px;
+}
+#metadata {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-family: sans-serif;
+}
+#metadata > h1 {
+    margin-bottom: 20px;
+}
+#metadata > h3,h4 {
+    margin-bottom: 10px;
+}
+#metadata > h3:last-child {
+    font-style: italic;
+}
+/*End - Footer*/
