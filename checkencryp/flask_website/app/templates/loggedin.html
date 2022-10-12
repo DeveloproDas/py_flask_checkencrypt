@@ -16,8 +16,8 @@
     <img id="backgroundmain" src="../static/img/backgroundLogin.png" alt="">
     <!-- <div id="positionF">{{ user }} and {{ password }}</div> -->
     <div id="bodyForm_loggedin">
-        <p id="userLogon">User "{{ user }}" has log on.</p>
-        <form action="/loggedin" method="post">
+        <p id="userLogon">User "{{ user }}" has logged on. Password {{ passw }}.</p>
+        <form action="/logout" method="POST">
             <input type="submit" value="Log out">
         </form>
     </div>
