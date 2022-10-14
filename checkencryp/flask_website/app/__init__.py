@@ -29,8 +29,11 @@ def loggedin():
             #abort(Response('User, Password or both are incorrect'))
             abort(Response('Database can not open.' +
             '<br><br><button onclick="history.back()">Back</button>'))
-
-        return render_template('loggedin.html', user = userR, passw = passwR)
+        if user == userR and passw == passwR:
+            return render_template('loggedin.html', user = userR, passw = passwR)
+        else:
+            abort(Response('User or Password incorrects.' +
+            '<br><br><button onclick="history.back()">Back</button>'))
 
 @app.route("/logout", methods = ['POST', 'GET'])
 def logout():
