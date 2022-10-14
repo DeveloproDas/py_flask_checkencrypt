@@ -1,6 +1,7 @@
-from unicodedata import name
-from flask import Flask, render_template, request, redirect, url_for
-import sqlite3 as db
+#from unicodedata import name
+from flask import Flask, render_template, request, redirect, url_for, abort, Response
+import sqlite3 as sql
+from sqlite3 import Error
 
 app = Flask(__name__)
 
@@ -13,17 +14,22 @@ def loggedin():
     if request.method == 'POST':
         user = request.form['user']
         passw = request.form['pass']
-
-        conn = db.connect('credentials.db')
-        conn.row_factory = db.Row
         
-        cur = conn.cursor()
-        rows = cur.execute("SELECT * FROM user").fetchall()
+        try:
+            conn = sql.connect('credentials.db')
+            #conn.row_factory = sql.Row
+            cur = conn.cursor()
+            cur.execute("SELECT * FROM tableUser")
+            rows = cur.fetchall()
+            conn.close()
+            for row in rows:
+                userR = row[1]
+                passwR = row[2]
+        except Error as e:
+            #abort(Response('User, Password or both are incorrect'))
+            abort(Response('Database can not open.' +
+            '<br><br><button onclick="history.back()">Back</button>'))
 
-        conn.close()
-        userR = rows['user']
-        passwR = rows['password']
-        
         return render_template('loggedin.html', user = userR, passw = passwR)
 
 @app.route("/logout", methods = ['POST', 'GET'])

@@ -18,8 +18,10 @@ header{
 }
 #headerUSQ {
     background-color: black;
-    width: 273px;
-    height: 274px;
+    width: 25%;
+    height: 25%;
+    max-width: 200px;
+    max-height: 200px;
     margin-top: 20px;
     border-radius: 50%;
     box-shadow: 0px 0px 20px 10px #1e1e1e;
@@ -73,13 +75,14 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     font-family: sans-serif;
-    font-size: 1.5em;
     font-weight: bold;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 #userLogon {
+    font-size: 1.3em;
+    text-align: center;
     margin-bottom: 100px;
 }
 #bodyForm_loggedin > form > input[type=submit] {
@@ -123,12 +126,39 @@ footer {
     font-family: sans-serif;
 }
 #metadata > h1 {
+    font-size: 2.1em;
+    /* font-size: min(2vw, 16px); */
+    /* font-size: 2.1em; */
     margin-bottom: 20px;
 }
 #metadata > h3,h4 {
+    font-size: 1.17em;
     margin-bottom: 10px;
 }
 #metadata > h3:last-child {
     font-style: italic;
 }
+#iconUSQfooter {
+    width: 30%;
+    height: 30%;
+    max-width: 200px;
+    max-height: 200px;
+}
 /*End - Footer*/
+
+@media screen and (max-width: 599px) {
+    /*Start - Body - loggedin.html*/
+    p#userLogon {
+        font-size: 3.5vw;
+    }
+    /*End - Body - loggedin.html*/
+
+    /*Start - Footer*/
+    #metadata > h1 {
+        font-size: 5vw;
+    }
+    #metadata > h3,h4 {
+        font-size: 3vw;
+    }
+    /*End - Footer*/
+}
