@@ -26,19 +26,20 @@
             <input type="submit" value="Logon">
         </form>
     </div>
+    <p>{{crepath}}</p>
 </body>
 <footer>
     <div id="footerinfo">
         <div id="metadata">
-            <h1>Master of<br>Cyber Security</h1>
+            <h1>{{meta_data[0]}}</h1>
             <h4>-----------------------+-----------------------</h4>
             <h3>
-                Network Security Management - < Subcode >
+                {{meta_data[1]}} - {{meta_data[2]}}
                 <br>
-                Lecture: < lectureName >
+                Lecture: {{meta_data[3]}}
             </h3>
             <h4>-----------------------+-----------------------</h4>
-            <h3>By Daniel Arango - < ID > </h3>
+            <h3>By {{meta_data[4]}} - {{meta_data[5]}} </h3>
         </div>
         <img id="iconUSQfooter" src="../static/img/FooterUSQ.png" alt="">
     </div>
